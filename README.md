@@ -2,7 +2,7 @@
 
 ## Guidelines
 
-Keep all code in the `code` folder.
+Keep all code in the `code` folder. Code should be type-annotated and use numpy-style docstrings.
 
 Keep all data outside this repo (such as a shared Google Drive) and provide direct links (accessible *only* to people explicitly granted access) in the readme file at `data/README.md`
 
