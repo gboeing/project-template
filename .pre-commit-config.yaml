@@ -22,7 +22,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.36.0
     hooks:
       - id: yamllint
         args:
@@ -35,7 +35,7 @@ repos:
             truthy: {check-keys: false}}}
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.1
+    rev: v0.9.10
     hooks:
       - id: ruff
         args:
@@ -50,11 +50,7 @@ repos:
           - --no-cache
           - --line-length=100
 
-  - repo: local
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
     hooks:
-      - id: nbconvert
-        name: clear notebook output
-        entry: jupyter nbconvert
-        language: system
-        types: [jupyter]
-        args: [--clear-output, --inplace]
+      - id: nbstripout
