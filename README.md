@@ -5,15 +5,17 @@ This is a template for rapidly starting new projects that include data, code, an
 ## Setup
 
 1. Git clone this repository to your computer.
-1. Open a terminal and change directories to the repository's root.
-2. Run `conda create -f environment.yml` to set up the conda environment.
-3. Run `pre-commit install` to install the pre-commit hooks.
+2. Open a terminal and change directories to the repository's root.
+3. Run `conda create -f environment.yml` to set up the conda environment.
+4. Run `conda activate env_name` to activate the environment.
+5. Run `pre-commit install` to install the pre-commit hooks.
+6. Run `python -m ipykernel install --user --name env_name --display-name "Python (env_name)"` to install an IPython kernel.
 
 ## Contributing guidelines
 
 ### Project organization
 
-**Code**: keep all code in the `code` folder. Code should be type-annotated, use numpy-style docstrings, and pass all pre-commit hooks.
+**Code**: keep all code in the `code` folder. Code should be type-annotated, use numpy-style docstrings, and pass all pre-commit hooks. Prefer .py Python scripts to .ipynb IPython notebooks whenever possible.
 
 **Data**: keep all data *outside* of this repo (such as a shared Google Drive) and provide direct links (accessible only to people explicitly granted access) in the readme file at `data/README.md`.
 
