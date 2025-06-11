@@ -1,6 +1,7 @@
 references-all.bib
 .DS_Store
 *.pdf
+uv.lock
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

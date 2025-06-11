@@ -1,7 +1,0 @@
-name: project
-channels:
-  - conda-forge
-dependencies:
-  - jupyterlab
-  - osmnx
-  - pre-commit
