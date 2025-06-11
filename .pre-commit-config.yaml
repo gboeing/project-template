@@ -1,3 +1,4 @@
+---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -22,20 +23,11 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.8
+    rev: v0.11.13
     hooks:
-      - id: ruff
-        args:
-          - --no-cache
-          - --fix
-          - --target-version=py312
-          - --line-length=100
-          - --select=ALL
-          - --ignore=T201
+      - id: ruff-check
+        args: [--no-cache, --fix]
       - id: ruff-format
-        args:
-          - --no-cache
-          - --line-length=100
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.8.1
@@ -43,14 +35,13 @@ repos:
       - id: nbstripout
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.37.0
+    rev: v1.37.1
     hooks:
       - id: yamllint
         args:
           - --strict
           - >
             -d={extends: default, rules: {
-            document-start: disable,
             quoted-strings: {quote-type: single,
                              required: only-when-needed}}}
 

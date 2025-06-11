@@ -1,3 +1,4 @@
+---
 name: CI
 
 on:  # yamllint disable-line rule:truthy
@@ -8,13 +9,10 @@ on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
 
 jobs:
-  build:
-    name: ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+  CI:
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
 
     defaults:
       run:
@@ -24,12 +22,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Create environment with Micromamba
-        uses: mamba-org/setup-micromamba@v2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
-          cache-environment: true
-          environment-file: ./environment.yml
-          post-cleanup: none
+          cache-dependency-glob: pyproject.toml
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
 
       - name: Cache pre-commit
         uses: actions/cache@v4
@@ -38,7 +38,7 @@ jobs:
           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit checks
-        run: pre-commit run --all-files
+        run: uv run pre-commit run --all-files
         env:
           SKIP: no-commit-to-branch
 

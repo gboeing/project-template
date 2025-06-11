@@ -46,11 +46,11 @@ Before you draft a paper, make sure you can articulate your interrelated researc
 - **Findings**: what did your analysis reveal
   - organize your results around your argument but present them objectively with limited interpretation
   - include supporting tables/figures
-  - do not mix in any methods
+  - do not mix in any methods: all the "how-to" goes in the previous section
 - **Discussion**: answer your question, advance your argument, and demonstrate significance
-  - return to research question and interpret (don't repeat) your findings as evidence for/against it
-  - tell a story: link your findings together to persuasively advance your argument
-  - significance: discuss specific implications for research and practice (the "so what")
+  - return to research problem/question and interpret (don't repeat) your findings as evidence for/against your hypothesis: tell a story to link your findings together to persuasively advance your argument
+  - how do your results align with or contradict existing theory reviewed in the background section, and why?
+  - significance: discuss specific implications for research and practice (the "so what"). If a practitioner read your paper, what would they do differently at work tomorrow in light of this new knowledge?
   - acknowledge study's limitations and alternative interpretations of your evidence: what opportunities are there for future research?
 - **Conclusion**: succinctly wrap up
   - summarize your topic, question, and argument
