@@ -24,5 +24,8 @@ extend-select = ["ALL"]
 [tool.ruff.lint.pycodestyle]
 max-line-length = 110 # line length + 10% since it isn't a hard upper bound
 
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
 [tool.uv]
 required-version = "==0.7.12"
