@@ -4,9 +4,9 @@ This is a template for rapidly starting new projects that include data, code, an
 
 ## Setup
 
-1. Git clone this repository to your computer.
-2. Open a terminal and change directories to the repository's root.
-3. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and [git](https://git-scm.com/downloads) if you haven't already.
+1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and [git](https://git-scm.com/downloads) if you haven't already.
+2. Git clone this repository to your computer.
+3. Open a terminal and change directories to the repository's root.
 4. Run `uv sync` to set up the local virtual environment.
 5. Run `uv run pre-commit install` to install the pre-commit hooks.
 6. Run `uv run jupyter lab` if you wish to run JupyterLab.
