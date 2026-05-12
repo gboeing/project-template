@@ -1,13 +1,13 @@
 [project]
 authors = [{ name = "Geoff Boeing", email = "boeing@usc.edu" }]
 dependencies = [
-    "jupyterlab==4.4.*",
-    "osmnx==2.0.*",
-    "pre-commit==4.3.*",
+    "jupyterlab>=4.5.7",
+    "osmnx==2.1.*",
+    "prek==0.3.*",
 ]
 description = "Template for rapidly starting new projects that include data, code, and a LaTeX paper. "
 license = "MIT"
-license-files = ["LICENSE.txt"]
+license-files = ["LICENSE"]
 name = "project-template"
 readme = "README.md"
 requires-python = "==3.13.*"
@@ -28,4 +28,4 @@ max-line-length = 110 # line length + 10% since it isn't a hard upper bound
 convention = "numpy"
 
 [tool.uv]
-required-version = "==0.8.*"
+required-version = "==0.11.*"

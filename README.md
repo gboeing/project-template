@@ -8,7 +8,7 @@ This is a template for rapidly starting new projects that include data, code, an
 2. Git clone this repository to your computer.
 3. Open a terminal and change directories to the repository's root.
 4. Run `uv sync` to set up the local virtual environment.
-5. Run `uv run pre-commit install` to install the pre-commit hooks.
+5. Run `uv run prek install` to install the pre-commit hooks.
 6. Run `uv run jupyter lab` if you wish to run JupyterLab.
 
 ## Contributing guidelines
