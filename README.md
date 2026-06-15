@@ -33,6 +33,6 @@ Commit code changes frequently, and push at the end of every day you do work. If
 
 Open a pull request on Github and confirm the CI tests have passed, then @ ping your code reviewer there when it's all passing and ready for review.
 
-Install the pre-commit hooks locally (see setup above) and always fix any pre-commit errors (use the line numbers and error messages as hints). The pre-commit hooks in `.pre-commit-config.yaml` are automatically run by Github as a continuous integration (CI) workflow by `.github/workflows/tests.yml` for every push to main or PR opened on main. We can merge branches' pull requests into main after they pass these CI checks and receive reviewer approval. You can run the hooks manually locally with `pre-commit run -a` but they also run automatically on all `git commit` commands after you've installed them.
+Install the pre-commit hooks locally (see setup above) and always fix any pre-commit errors (use the line numbers and error messages as hints). The pre-commit hooks in `.pre-commit-config.yaml` are automatically run by Github as a continuous integration (CI) workflow by `.github/workflows/tests.yml` for every push to main or PR opened on main. We can merge branches' pull requests into main after they pass these CI checks and receive reviewer approval. You can run the hooks manually locally with `uv run prek run -a` but they also run automatically on all `git commit` commands after you've installed them.
 
-Note: add `uv run` before any command if it needs to access packages installed in the virtual environment, like: `uv run pre-commit run -a`
+Note: add `uv run` before any command if it needs to access packages installed in the virtual environment, like: `uv run prek run -a`
