@@ -2,10 +2,10 @@
 authors = [{ name = "Geoff Boeing", email = "boeing@usc.edu" }]
 dependencies = [
     "jupyterlab>=4.5.7",
-    "nbdime=>4.0.0",
+    "nbdime>=4.0.0",
     "osmnx[all]>=2.1.0",
     "prek>=0.4.0",
-    "seaborn=>0.13.0",
+    "seaborn>=0.13.0",
 ]
 description = "Template for rapidly starting new projects that include data, code, and a LaTeX paper. "
 license = "MIT"
