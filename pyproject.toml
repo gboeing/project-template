@@ -2,30 +2,54 @@
 authors = [{ name = "Geoff Boeing", email = "boeing@usc.edu" }]
 dependencies = [
     "jupyterlab>=4.5.7",
-    "osmnx==2.1.*",
-    "prek==0.3.*",
+    "nbdime=>4.0.0",
+    "osmnx[all]>=2.1.0",
+    "prek>=0.4.0",
+    "seaborn=>0.13.0",
 ]
 description = "Template for rapidly starting new projects that include data, code, and a LaTeX paper. "
 license = "MIT"
 license-files = ["LICENSE"]
 name = "project-template"
 readme = "README.md"
-requires-python = "==3.13.*"
+requires-python = "==3.14.*"
 version = "0.0.0"
 
+[tool.mypy]
+cache_dir = "~/.cache/prek/cache/mypy"
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+ignore_missing_imports = true
+python_version = "3.14"
+strict = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.numpydoc_validation]
+checks = ["all", "ES01", "EX01", "GL08", "PR04", "SA01"]
+
 [tool.ruff]
-cache-dir = "~/.cache/pre-commit/ruff"
+cache-dir = "~/.cache/prek/cache/ruff"
+exclude = ["build/*"]
 line-length = 100
 
 [tool.ruff.lint]
 extend-ignore = ["T201"]
 extend-select = ["ALL"]
 
+[tool.ruff.lint.isort]
+force-single-line = true
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
 [tool.ruff.lint.pycodestyle]
 max-line-length = 110 # line length + 10% since it isn't a hard upper bound
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.ruff.lint.pylint]
+max-args = 6
 
 [tool.uv]
 required-version = "==0.11.*"
