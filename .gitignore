@@ -1,6 +1,6 @@
-references-all.bib
+*.code-workspace
 .DS_Store
-*.pdf
+paper/latex/.output/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
