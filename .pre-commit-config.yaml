@@ -27,12 +27,33 @@ repos:
         args: [--autofix]
       - id: trailing-whitespace
 
+  - repo: https://github.com/numpy/numpydoc
+    rev: v1.11.0rc0
+    hooks:
+      - id: numpydoc-validation
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.12
     hooks:
       - id: ruff-check
         args: [--no-cache, --fix]
       - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.1.0
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - matplotlib
+          - numpy
+          - osmnx
+          - pandas-stubs
+          - pytest
+          - scipy-stubs
+          - seaborn
+          - shapely
+          - statsmodels
+          - types-requests
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.9.1
