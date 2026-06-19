@@ -24,6 +24,10 @@ A few rules:
  - compile often, check log for warnings/errors, and resolve them promptly
  - run the pre-commit hooks to lint via chktex, and resolve any warnings
 
+Figures:
+ - statistical visualizations and maps should be vector images saved as PDF files
+ - photographs should be JPG files
+ - use PNG files for images containing text and lines that you cannot vectorize as PDF files (this should be rare)
 
 ## Paper Outline
 
