@@ -10,7 +10,7 @@
 - Code and analysis is in `code/`, including Jupyter notebooks and Python scripts.
 - Code should save any visualizations to be included in the paper as vector PDFs in `paper/latex/`.
 - LaTeX paper is in `paper/latex/`, including the `main.tex` manuscript, the `references.bib` BibTex, and figure files to include.
-- All LaTeX output/temp files go into `paper/latex/.output/`. 
+- All LaTeX output/temp files go into `paper/latex/.output/`.
 - Data are in `data/` and should not be committed.
 
 ## Commands
@@ -41,6 +41,7 @@
  - Use pdflatex instead of xelatex/lualatex for compatibility with arxiv/publishers.
  - Use natbib/bibtex instead of biblatex/biber for compatibility with arxiv/publishers.
  - Avoid subfolders: keep any figures or other included files as siblings of the .tex file.
+ - Prefer `\autoref` to `\ref`.
  - Use `\enquote` for quote marks and `\textit` for italics; avoid boldface.
  - Use `\citet` and `\citep` for textual and parenthetical citations, respectively; avoid `\cite`.
  - Use en dash (`--`) for ranges of values.

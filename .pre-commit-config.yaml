@@ -27,13 +27,68 @@ repos:
         args: [--autofix]
       - id: trailing-whitespace
 
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+        args:
+          - --strict
+          - >
+            -d={extends: default, rules: {
+            quoted-strings: {quote-type: single,
+                             required: only-when-needed}}}
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.6
+    hooks:
+      - id: remove-tabs
+
+  - repo: https://github.com/WGUNDERWOOD/tex-fmt
+    rev: v0.5.7
+    hooks:
+      - id: tex-fmt
+        args: [-f, -n, -r, -v, --format-tables]
+
+  - repo: https://github.com/FlamingTempura/bibtex-tidy
+    rev: v1.14.0
+    hooks:
+      - id: bibtex-tidy
+        args:
+          - --align=10
+          - --blank-lines
+          - --curly
+          - --duplicates
+          - --drop-all-caps
+          - --encode-urls
+          - --no-escape
+          - --no-wrap
+          - --numeric
+          - --omit=abstract,copyright,keywords,language,note,notes,shorttitle
+          - --remove-dupe-fields
+          - --remove-empty-fields
+          - --sort
+          - --sort-fields
+          - --strip-comments
+          - --trailing-commas
+
+  - repo: https://github.com/meliache/pre-commit-chktex
+    rev: v0.2.2
+    hooks:
+      - id: chktex-system
+        args: [-eall, -n3, -n12, -n22, -n30, -n46]
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+
   - repo: https://github.com/numpy/numpydoc
     rev: v1.11.0rc0
     hooks:
       - id: numpydoc-validation
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.12
+    rev: v0.15.20
     hooks:
       - id: ruff-check
         args: [--no-cache, --fix]
@@ -54,30 +109,3 @@ repos:
           - shapely
           - statsmodels
           - types-requests
-
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.9.1
-    hooks:
-      - id: nbstripout
-
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.38.0
-    hooks:
-      - id: yamllint
-        args:
-          - --strict
-          - >
-            -d={extends: default, rules: {
-            quoted-strings: {quote-type: single,
-                             required: only-when-needed}}}
-
-  - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.6
-    hooks:
-      - id: remove-tabs
-
-  - repo: https://github.com/meliache/pre-commit-chktex
-    rev: v0.2.2
-    hooks:
-      - id: chktex-system
-        args: [-eall, -n3, -n12, -n22, -n30, -n46]
