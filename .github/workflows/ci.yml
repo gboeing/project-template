@@ -8,6 +8,13 @@ on:  # yamllint disable-line rule:truthy
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   CI:
     runs-on: ubuntu-latest
@@ -25,16 +32,16 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
         with:
-          cache-dependency-glob: pyproject.toml
+          cache-dependency-glob: uv.lock
           enable-cache: true
 
       - name: Install dependencies
-        run: uv sync && sudo apt install chktex
-
+        run: sudo apt install chktex && uv sync --all-extras --all-groups
+        
       - name: Cache pre-commit
         uses: actions/cache@v6
         with:
-          path: ~/.cache/pre-commit/
+          path: ~/.cache/prek/
           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit checks
