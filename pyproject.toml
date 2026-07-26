@@ -1,7 +1,7 @@
 [project]
 authors = [{ name = "Geoff Boeing", email = "boeing@usc.edu" }]
 dependencies = [
-    "jupyterlab>=4.5.7",
+    "jupyterlab>=4.6.2",
     "nbdime>=4.0.0",
     "osmnx[all]>=2.1.0",
     "prek>=0.4.0",
